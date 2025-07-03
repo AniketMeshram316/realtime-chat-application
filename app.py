@@ -4,7 +4,7 @@ from redis_config import r
 from auth import auth_bp
 import eventlet
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 app.secret_key = 'supersecretkey'
 socketio = SocketIO(app, cors_allowed_origins="*", async_mode='eventlet')
 
